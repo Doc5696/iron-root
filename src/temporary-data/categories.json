@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Комлектуючі",
+    "dataKey": "hardware",
+    "route": "hardware",
+    "subCategories": {
+      "processors": {
+        "label": "Процесори",
+        "dataKey": "processors",
+        "route": "processors"
+      },
+      "motherBoards": {
+        "label": "Материнські плати",
+        "dataKey": "motherBoards",
+        "route": "mother-boards"
+      },
+      "ram": {
+        "label": "Оперативна пам'ять",
+        "dataKey": "ram",
+        "route": "ram"
+      }
+    }
+  }
+]
