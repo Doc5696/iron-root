@@ -21,23 +21,23 @@ export const usersFailure = err => {
   }
 }
 
-export const LastPostsRequest = data => {
+export const createUserRequest = user => {
   return {
-    type: types.LAST_POSTS_REQUEST,
-    payload: data
+    type: types.CREATE_USER_REQUEST,
+    payload: user
   }
 }
 
-export const LastPostsSuccess = data => {
+export const createUserSuccess = user => {
   return {
-    type: types.LAST_POSTS_SUCCESS,
-    payload: data
+    type: types.CREATE_USER_SUCCESS,
+    payload: user
   }
 }
 
-export const LastPostsFailure = err => {
+export const createUserFailure = err => {
   return {
-    type: types.LAST_POSTS_FAILURE,
+    type: types.CREATE_USER_FAILURE,
     payload: err
   }
 }

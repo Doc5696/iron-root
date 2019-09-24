@@ -7,6 +7,6 @@ export const getUsers = async () => {
   return users
 }
 
-export const getPosts = () => {
-  console.log('posts was fetched')
+export const createUser = async user => {
+  await fetch(usersEndPoint, 'POST', user)
 }

@@ -3,6 +3,7 @@ import Users from './index'
 
 import {
   usersRequest,
+  createUserRequest,
 } from './services/actions'
 
 const mapStateToProps = state => ({
@@ -12,6 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   usersRequest: () => dispatch(usersRequest()),
+  createUserRequest: user => dispatch(createUserRequest(user)),
 })
 
 export default connect(
