@@ -7,7 +7,9 @@ import StyledInput from './styled/StyledInput'
 import StyledFormBlock from './styled/StyledFormBlock'
 import StyledLabel from './styled/StyledLabel'
 
-const CreateUserForm = () => {
+const CreateUserForm = ({
+  onCreate,
+}) => {
   return (
     <StyledForm id="CreateUserForm">
       <StyledFormBlock>
@@ -25,6 +27,7 @@ const CreateUserForm = () => {
       <Button
         text="Зберегти"
         type="submit"
+        onClick={() => onCreate({name: "john"})}
       />
       <Button
         text="Очистити"

@@ -3,13 +3,13 @@ import * as types from './action.types'
 import {
   usersSuccess,
   usersFailure,
-  LastPostsSuccess,
-  LastPostsFailure
+  createUserSuccess,
+  createUserFailure
 } from './actions'
 import {
   getUsers,
-  getPosts
-} from './services';
+  createUser
+} from './services'
 
 function* usersRequest(request) {
   try {
@@ -20,18 +20,18 @@ function* usersRequest(request) {
   }
 }
 
-function* postsRequest(request) {
+function* createUserRequest(request) {
   try {
-    const data = yield call(getPosts, request.payload)
-    yield put(LastPostsSuccess(data))
+    const user = yield call(createUser, request.payload)
+    yield put(createUserSuccess(user))
   } catch (err) {
-    yield put(LastPostsFailure(err))
+    yield put(createUserFailure(err))
   }
 }
 
 export function* usersSaga() {
   yield all([
     takeEvery(types.USERS_REQUEST, usersRequest),
-    takeEvery(types.LAST_POSTS_REQUEST, postsRequest)
+    takeEvery(types.CREATE_USER_REQUEST, createUserRequest),
   ])
 }

@@ -17,10 +17,13 @@ class Users extends React.Component {
   render() {
     const {
       users,
+      createUserRequest,
     } = this.props
     return (
       <Page title="Users">
-        <CreateUserForm />
+        <CreateUserForm
+          onCreate={createUserRequest}
+        />
         <Table
           headers={tableHeaders}
           data={users}
@@ -33,6 +36,7 @@ class Users extends React.Component {
 Users.propTypes = {
   usersRequest: PropTypes.func.isRequired,
   users: PropTypes.array.isRequired,
+  createUserRequest: PropTypes.func.isRequired,
 }
 
 export default Users;
